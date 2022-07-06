@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Projeto_Cadastro</name>
+    </assembly>
+    <members>
+        <member name="M:Projeto_Cadastro.Controllers.LoginController.Login(Projeto_Cadastro.ViewModels.loginViewModel)">
+            <summary>
+            Metodo responsavel por fazer login no sistema
+            </summary>
+            <param name="login">Objeto do tipo Login com Email e Senha</param>
+            <returns>Usuario com esse email e senha</returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Controllers.TipoController.Listar_Tipos">
+            <summary>
+            Metodo responsavel por listar todos os tipos de usuarios existentes
+            </summary>
+            <returns>Uma lista de tipos de ususarios</returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Cadastrar(Projeto_Cadastro.ViewModels.usuarioViewModel,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Metodo resposavel pelo cadastro de novos usuarios no sistema
+            </summary>
+            <param name="usuarionovo">Novo usuario</param>
+            <param name="arquivo">Foto de perfil</param>
+            <returns></returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Buscar_Id(System.Int32)">
+            <summary>
+            Metodo responsavel por listar as informações especificas de um usuario
+            </summary>
+            <param name="id">id do usuario a ser buscado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Listar_Todos">
+            <summary>
+            Metodo responsavel por listar todos os usuario
+            </summary>
+            <returns>Uma lista com todos os usuarios</returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Deletar(System.Int32)">
+            <summary>
+            Metodo resposanvel por deletar um usuario cadastrado
+            </summary>
+            <param name="id">Id do usuario a ser apagado</param>
+        </member>
+        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Atualizar(Projeto_Cadastro.ViewModels.usuarioViewModel,System.Int32,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Metodo responsavel por atualizar as informações de um usuario
+            </summary>
+            <param name="usuario_Atualizado">Novas informações</param>
+            <param name="id">id do usuario a ser atualizado</param>
+            <param name="arquivo">nova foto de perfil</param>
+            <returns></returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Interfaces.IUsuarioRepository.Listar_Todos">
+            <summary>
+            Metodo responsavel por listar todos os usuarios cadastrados
+            </summary>
+            <returns>Uma lista de usuarios</returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Interfaces.IUsuarioRepository.Buscar(System.Int32)">
+            <summary>
+            Metodo responsavel por listar um usuario especifico
+            </summary>
+            <param name="id">Id do usuario buscado</param>
+            <returns>Usuario encntrado</returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Interfaces.IUsuarioRepository.Cadastrar(Projeto_Cadastro.ViewModels.usuarioViewModel)">
+            <summary>
+            Metodo responsavel por cadastrar um usuario
+            </summary>
+            <param name="Usuario_Novo">Novo usuario a ser cadastrado</param>
+        </member>
+        <member name="M:Projeto_Cadastro.Interfaces.IUsuarioRepository.Editar(Projeto_Cadastro.ViewModels.usuarioViewModel,System.Int32)">
+            <summary>
+            Metodo responsavel por Atualizar as informações de um usuario
+            </summary>
+            <param name="Usuario_Atualizado">Novas informações</param>
+            <param name="id">Id do usuario a ser atualizado</param>
+            <returns>Saber se o método deu certo ou não</returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Metodo responsavel por deletar um usuario
+            </summary>
+            <param name="id">Id do usuario a ser excluido</param>
+        </member>
+        <member name="M:Projeto_Cadastro.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Metodo responsavel por logar o usuario na aplicação
+            </summary>
+            <param name="email">Email do usuario</param>
+            <param name="senha"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Utils.Upload.UploadFile(Microsoft.AspNetCore.Http.IFormFile,System.String[])">
+            <summary>
+            Faz o upload do arquivo para o servidor
+            </summary>
+            <param name="arquivo">Arquivo vindo de um formulário</param>
+            <param name="extensoesPermitidas">Array com extensões permitidas apenas</param>
+            <returns>Nome do arquivo salvo</returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Utils.Upload.ValidarExtensao(System.String[],System.String)">
+            <summary>
+            Valida o uso de enxtensões permitidas apenas
+            </summary>
+            <param name="extensoes">Array de extensões permitidas</param>
+            <param name="nomeDoArquivo">Nome do arquivo</param>
+            <returns>Verdadeiro/Falso</returns>
+        </member>
+        <member name="M:Projeto_Cadastro.Utils.Upload.RetornarExtensao(System.String)">
+            <summary>
+            Retorna a extensão de um arquivo
+            </summary>
+            <param name="nomeDoArquivo">Nome do Arquivo</param>
+            <returns>Retorna a extensão de um arquivo</returns>
+        </member>
+    </members>
+</doc>
