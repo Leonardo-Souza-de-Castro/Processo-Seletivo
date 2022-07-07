@@ -24,29 +24,13 @@ namespace Projeto_Cadastro.Controllers
         /// Metodo resposavel pelo cadastro de novos usuarios no sistema
         /// </summary>
         /// <param name="usuarionovo">Novo usuario</param>
-        /// <param name="arquivo">Foto de perfil</param>
         /// <returns></returns>
         [Authorize(Roles = "2,3")]
         [HttpPost]
-        public IActionResult Cadastrar([FromForm] usuarioViewModel usuarionovo, IFormFile arquivo)
+        public IActionResult Cadastrar(usuarioViewModel usuarionovo)
         {
             try
             {
-                string[] extensoesPermitidas = { "jpg", "png", "jpeg" };
-                string uploadResultado = Upload.UploadFile(arquivo, extensoesPermitidas);
-
-                if (uploadResultado == "")
-                {
-                    return BadRequest("Arquivo não encontrado");
-                }
-
-                if (uploadResultado == "Extensão não permitida")
-                {
-                    return BadRequest("Extensão de arquivo não permitida");
-                }
-
-                usuarionovo.Imagem = uploadResultado;
-
                 _context.Cadastrar(usuarionovo);
 
                 return StatusCode(201);
@@ -101,7 +85,7 @@ namespace Projeto_Cadastro.Controllers
         /// Metodo resposanvel por deletar um usuario cadastrado
         /// </summary>
         /// <param name="id">Id do usuario a ser apagado</param>
-        [Authorize(Roles = "2,3")]
+        [Authorize(Roles = "3")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -123,29 +107,13 @@ namespace Projeto_Cadastro.Controllers
         /// </summary>
         /// <param name="usuario_Atualizado">Novas informações</param>
         /// <param name="id">id do usuario a ser atualizado</param>
-        /// <param name="arquivo">nova foto de perfil</param>
         /// <returns></returns>
-        [Authorize]
+        [Authorize(Roles = "2,3")]
         [HttpPatch("{id}")]
-        public IActionResult Atualizar([FromForm] usuarioViewModel usuario_Atualizado, int id, IFormFile arquivo)
+        public IActionResult Atualizar(usuarioViewModel usuario_Atualizado, int id)
         {
             try
             {
-                string[] extensoesPermitidas = { "jpg", "png", "jpeg" };
-                string uploadResultado = Upload.UploadFile(arquivo, extensoesPermitidas);
-
-                if (uploadResultado == "")
-                {
-                    return BadRequest("Arquivo não encontrado");
-                }
-
-                if (uploadResultado == "Extensão não permitida")
-                {
-                    return BadRequest("Extensão de arquivo não permitida");
-                }
-
-                usuario_Atualizado.Imagem = uploadResultado;
-
                 _context.Editar(usuario_Atualizado, id);
 
                 return StatusCode(204);

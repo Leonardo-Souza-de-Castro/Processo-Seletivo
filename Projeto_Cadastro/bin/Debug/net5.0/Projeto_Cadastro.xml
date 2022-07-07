@@ -17,7 +17,7 @@
             </summary>
             <returns>Uma lista de tipos de ususarios</returns>
         </member>
-        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Cadastrar(Projeto_Cadastro.ViewModels.usuarioViewModel,Microsoft.AspNetCore.Http.IFormFile)">
+        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Cadastrar(Projeto_Cadastro.ViewModels.usuarioViewModel)">
             <summary>
             Metodo resposavel pelo cadastro de novos usuarios no sistema
             </summary>
@@ -44,7 +44,7 @@
             </summary>
             <param name="id">Id do usuario a ser apagado</param>
         </member>
-        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Atualizar(Projeto_Cadastro.ViewModels.usuarioViewModel,System.Int32,Microsoft.AspNetCore.Http.IFormFile)">
+        <member name="M:Projeto_Cadastro.Controllers.UsuarioController.Atualizar(Projeto_Cadastro.ViewModels.usuarioViewModel,System.Int32)">
             <summary>
             Metodo responsavel por atualizar as informações de um usuario
             </summary>

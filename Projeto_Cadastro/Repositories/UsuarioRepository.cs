@@ -35,7 +35,7 @@ namespace Projeto_Cadastro.Repositories
             }).FirstOrDefault(x => x.IdUsuario == id);
         }
 
-        public void Cadastrar([FromForm] usuarioViewModel Usuario_Novo)
+        public void Cadastrar(usuarioViewModel Usuario_Novo)
         {
             Usuario Usuario_novo = new Usuario();
 
@@ -60,7 +60,7 @@ namespace Projeto_Cadastro.Repositories
             ctx.SaveChanges();
         }
 
-        public void Editar([FromForm] usuarioViewModel Usuario_Atualizado, int id)
+        public void Editar(usuarioViewModel Usuario_Atualizado, int id)
         {
             Usuario Usuario_novo = ctx.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
 
